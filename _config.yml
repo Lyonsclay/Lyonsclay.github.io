@@ -1,0 +1,13 @@
+# Site settings
+title: Lyonsclay Code Blog
+description: > # this means to ignore newlines until "baseurl:"
+  I like to code while listening to Rasta music.
+  My specialty is unstructured thinking.
+  Oh yeah, and when I want to build a neural network I use Elixir.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://lyonsclay.github.io" # the base hostname & protocol for your site
+twitter_username: LyonsClay
+github_username:  Lyonsclay
+
+# Build settings
+markdown: kramdown
