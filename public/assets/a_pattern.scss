@@ -2,10 +2,15 @@
 ---
 
 .site-header {
-  height: 300px;
+  height: 350px;
   background-image: url(avocets.jpg);
-  background-position: 0 -450px;
-  background-size: 100%;
+  background-position: 0px -430px;
+  background-position: -0px -460px;
+  background-size: cover;
+}
+
+a.site-title {
+  display: none;
 }
 
 pre#plain {
@@ -14,5 +19,3 @@ pre#plain {
   border: none;
 }
 
-body {
-}

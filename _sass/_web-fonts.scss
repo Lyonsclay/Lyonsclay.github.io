@@ -1,0 +1,168 @@
+@font-face {
+  font-family: 'Raleway';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/public/assets/fonts/Raleway-regular/Raleway-regular.eot');
+  src: url('/public/assets/fonts/Raleway-regular/Raleway-regular.eot?#iefix') format('embedded-opentype'),
+       local('Raleway'),
+       local('Raleway-regular'),
+       url('/public/assets/fonts/Raleway-regular/Raleway-regular.woff2') format('woff2'),
+       url('/public/assets/fonts/Raleway-regular/Raleway-regular.woff') format('woff'),
+       url('/public/assets/fonts/Raleway-regular/Raleway-regular.ttf') format('truetype'),
+       url('/public/assets/fonts/Raleway-regular/Raleway-regular.svg#Raleway') format('svg');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/public/assets/fonts/Raleway-500/Raleway-500.eot');
+  src: url('/public/assets/fonts/Raleway-500/Raleway-500.eot?#iefix') format('embedded-opentype'),
+       local('Raleway Medium'),
+       local('Raleway-500'),
+       url('/public/assets/fonts/Raleway-500/Raleway-500.woff2') format('woff2'),
+       url('/public/assets/fonts/Raleway-500/Raleway-500.woff') format('woff'),
+       url('/public/assets/fonts/Raleway-500/Raleway-500.ttf') format('truetype'),
+       url('/public/assets/fonts/Raleway-500/Raleway-500.svg#Raleway') format('svg');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-style: normal;
+  src: url('/public/assets/fonts/Raleway-600/Raleway-600.eot');
+  src: url('/public/assets/fonts/Raleway-600/Raleway-600.eot?#iefix') format('embedded-opentype'),
+       local('Raleway SemiBold'),
+       local('Raleway-600'),
+       url('/public/assets/fonts/Raleway-600/Raleway-600.woff2') format('woff2'),
+       url('/public/assets/fonts/Raleway-600/Raleway-600.woff') format('woff'),
+       url('/public/assets/fonts/Raleway-600/Raleway-600.ttf') format('truetype'),
+       url('/public/assets/fonts/Raleway-600/Raleway-600.svg#Raleway') format('svg');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/public/assets/fonts/Raleway-700/Raleway-700.eot');
+  src: url('/public/assets/fonts/Raleway-700/Raleway-700.eot?#iefix') format('embedded-opentype'),
+       local('Raleway Bold'),
+       local('Raleway-700'),
+       url('/public/assets/fonts/Raleway-700/Raleway-700.woff2') format('woff2'),
+       url('/public/assets/fonts/Raleway-700/Raleway-700.woff') format('woff'),
+       url('/public/assets/fonts/Raleway-700/Raleway-700.ttf') format('truetype'),
+       url('/public/assets/fonts/Raleway-700/Raleway-700.svg#Raleway') format('svg');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-weight: 800;
+  font-style: normal;
+  src: url('/public/assets/fonts/Raleway-800/Raleway-800.eot');
+  src: url('/public/assets/fonts/Raleway-800/Raleway-800.eot?#iefix') format('embedded-opentype'),
+       local('Raleway ExtraBold'),
+       local('Raleway-800'),
+       url('/public/assets/fonts/Raleway-800/Raleway-800.woff2') format('woff2'),
+       url('/public/assets/fonts/Raleway-800/Raleway-800.woff') format('woff'),
+       url('/public/assets/fonts/Raleway-800/Raleway-800.ttf') format('truetype'),
+       url('/public/assets/fonts/Raleway-800/Raleway-800.svg#Raleway') format('svg');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/public/assets/fonts/Roboto-Slab-300/Roboto-Slab-300.eot');
+  src: url('/public/assets/fonts/Roboto-Slab-300/Roboto-Slab-300.eot?#iefix') format('embedded-opentype'),
+       local('Roboto Slab Light'),
+       local('Roboto-Slab-300'),
+       url('/public/assets/fonts/Roboto-Slab-300/Roboto-Slab-300.woff2') format('woff2'),
+       url('/public/assets/fonts/Roboto-Slab-300/Roboto-Slab-300.woff') format('woff'),
+       url('/public/assets/fonts/Roboto-Slab-300/Roboto-Slab-300.ttf') format('truetype'),
+       url('/public/assets/fonts/Roboto-Slab-300/Roboto-Slab-300.svg#RobotoSlab') format('svg');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/public/assets/fonts/Roboto-Slab-regular/Roboto-Slab-regular.eot');
+  src: url('/public/assets/fonts/Roboto-Slab-regular/Roboto-Slab-regular.eot?#iefix') format('embedded-opentype'),
+       local('Roboto Slab Regular'),
+       local('Roboto-Slab-regular'),
+       url('/public/assets/fonts/Roboto-Slab-regular/Roboto-Slab-regular.woff2') format('woff2'),
+       url('/public/assets/fonts/Roboto-Slab-regular/Roboto-Slab-regular.woff') format('woff'),
+       url('/public/assets/fonts/Roboto-Slab-regular/Roboto-Slab-regular.ttf') format('truetype'),
+       url('/public/assets/fonts/Roboto-Slab-regular/Roboto-Slab-regular.svg#RobotoSlab') format('svg');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/public/assets/fonts/Ubuntu-300/Ubuntu-300.eot');
+  src: url('/public/assets/fonts/Ubuntu-300/Ubuntu-300.eot?#iefix') format('embedded-opentype'),
+       local('Ubuntu Light'),
+       local('Ubuntu-300'),
+       url('/public/assets/fonts/Ubuntu-300/Ubuntu-300.woff2') format('woff2'),
+       url('/public/assets/fonts/Ubuntu-300/Ubuntu-300.woff') format('woff'),
+       url('/public/assets/fonts/Ubuntu-300/Ubuntu-300.ttf') format('truetype'),
+       url('/public/assets/fonts/Ubuntu-300/Ubuntu-300.svg#Ubuntu') format('svg');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/public/assets/fonts/Ubuntu-regular/Ubuntu-regular.eot');
+  src: url('/public/assets/fonts/Ubuntu-regular/Ubuntu-regular.eot?#iefix') format('embedded-opentype'),
+       local('Ubuntu'),
+       local('Ubuntu-regular'),
+       url('/public/assets/fonts/Ubuntu-regular/Ubuntu-regular.woff2') format('woff2'),
+       url('/public/assets/fonts/Ubuntu-regular/Ubuntu-regular.woff') format('woff'),
+       url('/public/assets/fonts/Ubuntu-regular/Ubuntu-regular.ttf') format('truetype'),
+       url('/public/assets/fonts/Ubuntu-regular/Ubuntu-regular.svg#Ubuntu') format('svg');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/public/assets/fonts/Ubuntu-500/Ubuntu-500.eot');
+  src: url('/public/assets/fonts/Ubuntu-500/Ubuntu-500.eot?#iefix') format('embedded-opentype'),
+       local('Ubuntu Medium'),
+       local('Ubuntu-500'),
+       url('/public/assets/fonts/Ubuntu-500/Ubuntu-500.woff2') format('woff2'),
+       url('/public/assets/fonts/Ubuntu-500/Ubuntu-500.woff') format('woff'),
+       url('/public/assets/fonts/Ubuntu-500/Ubuntu-500.ttf') format('truetype'),
+       url('/public/assets/fonts/Ubuntu-500/Ubuntu-500.svg#Ubuntu') format('svg');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/public/assets/fonts/Noto-Sans-regular/Noto-Sans-regular.eot');
+  src: url('/public/assets/fonts/Noto-Sans-regular/Noto-Sans-regular.eot?#iefix') format('embedded-opentype'),
+       local('Noto Sans'),
+       local('Noto-Sans-regular'),
+       url('/public/assets/fonts/Noto-Sans-regular/Noto-Sans-regular.woff2') format('woff2'),
+       url('/public/assets/fonts/Noto-Sans-regular/Noto-Sans-regular.woff') format('woff'),
+       url('/public/assets/fonts/Noto-Sans-regular/Noto-Sans-regular.ttf') format('truetype'),
+       url('/public/assets/fonts/Noto-Sans-regular/Noto-Sans-regular.svg#NotoSans') format('svg');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/public/assets/fonts/Noto-Sans-700/Noto-Sans-700.eot');
+  src: url('/public/assets/fonts/Noto-Sans-700/Noto-Sans-700.eot?#iefix') format('embedded-opentype'),
+       local('Noto Sans Bold'),
+       local('Noto-Sans-700'),
+       url('/public/assets/fonts/Noto-Sans-700/Noto-Sans-700.woff2') format('woff2'),
+       url('/public/assets/fonts/Noto-Sans-700/Noto-Sans-700.woff') format('woff'),
+       url('/public/assets/fonts/Noto-Sans-700/Noto-Sans-700.ttf') format('truetype'),
+       url('/public/assets/fonts/Noto-Sans-700/Noto-Sans-700.svg#NotoSans') format('svg');
+}
+

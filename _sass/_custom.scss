@@ -1,5 +1,101 @@
 .site-header {
-  height: 300px;
-  //background-image: url(../public/assets/desert.jpg);
-  background-position: 0 -1000px;
+  height: 220px;
+  background-image: url(../public/assets/desert.jpg);
+  background-position: -210px -1010px;
+  border-bottom: none;
+}
+
+div.wrapper {
+  padding-left: 0;
+  width: 100%;
+  min-width: 330px;
+}
+
+a.site-title {
+  width: 100%;
+  font: 800 65px Raleway, helvetica;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  padding-top: 15px;
+  text-shadow: 0px 0px 4px black;
+  text-decoration-color: OliveDrab;
+  text-decoration-style: wavy;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+ul.top-graphics {
+  list-style-type: none;
+  position: absolute;
+  right: 3%;
+  margin-bottom: 0;
+  bottom: 5px;
+
+  li {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: inline-block;
+
+    a {
+    }
+  }
+}
+
+.top-graphics {
+  svg {
+    width: 100%;
+    height: 100%;
+
+    path {
+      fill: FloralWhite;
+      opacity: 0.8;
+    }
+  } 
+} 
+
+div.page-content {
+  background-image: linear-gradient(#1A1A1A, LightGray);
+  -moz-box-shadow: inset 0 0 10px 10px white;
+  -webkit-box-shadow: inset 0 0 30px 30px white;
+  box-shadow: inset 0px -790px 50px -80px white;
+
+}
+
+a.post-link { text-decoration-color: OliveDrab;
+  text-decoration-style: wavy;
+  font: 400 40px 'Noto Sans', helvetica;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+li {
+  text-align: center;
+}
+
+span.post-meta {
+  text-align: center;
+}
+
+h2 { 
+  color: DarkSlateGray;
+  opacity: 0.9;
+}
+
+pre#plain {
+  text-align: left;
+  background-color: #fdfdfd;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+ul.post-list {
+  font: 15px 'Noto Sans', arial;
+
+  p {
+    color: DarkSlateGray;
+  }
 }
