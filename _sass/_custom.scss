@@ -13,10 +13,11 @@ svg.site-title {
   a {
     font: 800 55px Raleway, helvetica;
     text-decoration: none;
-  }
-  
-  text {
-    fill: #333;
+    letter-spacing: 2px;
+
+    text {
+      textLength: 485px;
+    }
   }
 }
 
