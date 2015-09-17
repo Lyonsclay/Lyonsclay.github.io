@@ -1,14 +1,24 @@
 <header class="site-header">
+  <div class="background-gradient">
+    {% include background_gradient.svg %}
+  </div>
+
   <div class="wrapper">
-    {% include title.svg %}
+    {% include title.html %}
   </div>
 
   <ul class="top-graphics">
     <li>
-      {% include twitter.svg %}  
+      {% include twitter.html %}  
     </li>
+
     <li>
-      {% include github.svg %}
+      {% include github.html %}
     </li>
-  </ul>
+     <li>
+      {% include photo_credit.html %}
+    </li>
+
+ </ul>
 </header>
+
