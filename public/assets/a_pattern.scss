@@ -12,6 +12,15 @@
   display: none;
 }
 
+div.top-links {
+  ul.left-links {
+    svg {
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
 pre#plain {
   background-color: #fdfdfd;
   padding: 0;
