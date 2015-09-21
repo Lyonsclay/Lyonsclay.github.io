@@ -5,7 +5,12 @@
   height: 320px;
   background-image: url(avocets.jpg);
   background-position: 0px -460px;
+  background-repeat: no-repeat;
   background-size: cover;
+}
+
+.wrapper {
+  height: 220px;
 }
 
 .site-title {

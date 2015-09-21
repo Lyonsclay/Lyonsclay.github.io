@@ -1,6 +1,7 @@
 ---
 layout: post
 custom_css: a_pattern
+custom_js: a_pattern
 title: "Finally, a pattern I can live with."
 date: 2015-09-06 21:32:00
 categories: rails models logic
