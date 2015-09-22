@@ -3,17 +3,9 @@
 
 .site-header {
   height: 320px;
-  background-image: url(avocets.jpg);
+  background-image: url(../images/avocets.jpg);
   background-position: 0px -1570px;
-  //background-size: 100%;
-  //width: 100%;
-  //background-attachment: local;
-  //background-repeat: no-repeat;
-  background-size: 1671px;
-}
-
-.wrapper {
-  height: 220px;
+  background-size: 1685px;
 }
 
 .site-title {
@@ -21,7 +13,9 @@
 }
 
 div.top-links {
-  ul.left-links {
+  bottom: -60px;
+
+  div.left-links {
     svg {
       width: auto;
       height: auto;

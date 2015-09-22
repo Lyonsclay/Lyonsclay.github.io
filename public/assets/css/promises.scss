@@ -1,0 +1,65 @@
+---
+---
+
+.site-header {
+  height: 320px;
+  background-image: url(../images/maximillian.jpg);
+  background-position: 0px -1570px;
+  background-size: 1685px;
+}
+
+
+.site-title {
+  width: 0px;
+}
+
+div.top-links {
+  bottom: -60px;
+
+  div.left-links {
+    svg {
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+
+.background-gradient {
+}
+
+div.top-links li .icon svg {
+  path {
+    fill: CornSilk;
+    opacity: 0.45;
+  }
+
+  rect {
+    stroke-opacity: 0.4;
+  }
+
+  text {
+    opacity: 0.5;
+  }
+
+  &:hover path {
+    fill: white;
+    fill: url(#background);
+    opacity: 1.0;
+    stroke-width: 0.5px;
+  }
+}
+
+div.left-links li .icon svg path {
+  fill: url(#background);
+  //stroke-width: 2px;
+}
+
+
+pre#plain {
+  background-color: #fdfdfd;
+  margin-left: 0px;
+  padding: 0;
+  border: none;
+}
+
