@@ -69,13 +69,21 @@ Synchronous code is run sequentially from one line to the next and blocks
 execution of further tasks until the present routine is complete. Synchronous
 code can return a value to the function caller with the `return` statement.
 
-```javascript function output(value) { return value; }
+{% highlight javascript %}
+function output(value) { 
+  return value;
+}
 
-var sync = output('jumbalaya'); console.log(sync === 'jumbalaya');   // true ```
+var sync = output('jumbalaya');
+console.log(sync === 'jumbalaya');
+// true
+{% endhighlight %}
 You might recall that synchronous functions can be chained together so that the
 output of one function is the input of the next.
 
-```javascript 'run'.concat(' away').bold(); // "<b>run away</b>" ```
+{% highlight javascript %}
+'run'.concat(' away').bold(); // "<b>run away</b>"
+{% endhighlight %}
 
 ## Asynchronous Code
 
@@ -91,10 +99,17 @@ immediately( or at least synchronously) otherwise it could not capture an output
 value because it would look for a value before it was released and report back
 empty.
 
-```javascript var async = setTimeout(function () { console.log('stay classy');
-return 'to the depths'; }, 1500);
+{% highlight javascript %}
+var async = setTimeout(function () {
+  console.log('stay classy');
 
-console.log(async === 'to the depths');   // false ```
+  return 'to the depths';
+}, 1500);
+
+console.log(async === 'to the depths');
+
+// false
+{% endhighlight %}
 
 In this case the return statement inside `setTimeout` is ignored and `async` is
 set to equal the numerical id of the timeout. As it happens, this id can then be
@@ -103,20 +118,29 @@ used with the `clearTimeout` function to end an active `setTimeout` timer.
 One way of capturing a value from a `setTimeout` is to define a global variable
 so that all functions can access it.
 
-```javascript var deffered = 'bric a brac';   // global variable
+{% highlight javascript %}
+var deffered = 'bric a brac';
+// global variable
 
-var passingOut = setTimeout(function () { deffered = 'captured value';
-console.log('check deffered now'); }, 3000);
+var passingOut = setTimeout(function () {
+  deffered = 'captured value';
+
+  console.log('check deffered now');
+}, 3000);
 
 // Result depends on when deffered is accessed.  deffered === 'captured value';
-```
+{% endhighlight %}
 
 The [global
 variable](http://stackoverflow.com/questions/4862193/javascript-global-variables)
 can also be set inside a function. Here's more information on the
 [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object.
 
-```javascript function setGlobal() { window.greeting = 'namaste'; } ```
+{% highlight javascript %}
+function setGlobal() { 
+  window.greeting = 'namaste';
+}
+{% endhighlight %}
 
 Either way it is declared a global variable refers to a variable in the [global
 environment](http://www.ecma-international.org/ecma-262/5.1/#sec-10.2.3). The
@@ -137,10 +161,22 @@ function's variables. Checkout
 [scope](http://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/)
 for more information on how variables are accessed in JavaScript functions.
 
-```javascript function chains() { var arcane = 'chains'; setTimeout(function ()
-{        // outer function arcane += ' of '; setTimeout(function () {    //
-inner function arcane += 'mephistopheles'; console.log(arcane); }, 700); },
-700); return arcane; } ```
+{% highlight javascript %}
+function chains() { 
+  var arcane = 'chains';
+  setTimeout(function ()
+      {        // outer function 
+        arcane += ' of ';
+        setTimeout(function () {
+          // inner function 
+          arcane += 'mephistopheles';
+          console.log(arcane);
+        }, 700);
+      },
+      700);
+  return arcane;
+}
+{% endhighlight %}
 
 The execution of each nested asynchronous function is contingent upon the
 completion of an event called by the outer function that encompasses it. In the
@@ -154,9 +190,11 @@ the operation of subsequent functions to occur sequentially. This means that the
 values getting passed by the `return` statement are not the final computed
 values that the asynchronous functions will eventually give.
 
-```javascript var breakable = chains();
+{% highlight javascript %}
+var breakable = chains();
 
-breakable // "chains" ```
+breakable // "chains"
+{% endhighlight %}
 
 If we set a variable equal to the output of the function `chains` that variable
 will still have the value given in the initial declaration `var arcane =
@@ -178,16 +216,26 @@ specification that is worth checking out.
 
 Here is a simple promise to illustrate the pattern.
 
-```javascript var basicPromise = new Promise(function (resolve, reject) { var
-basicOperation = true; if (basicOperation) { resolve('play to win'); } else {
-reject('crash and burn'); } }); ```
+{% highlight javascript %}
+var basicPromise = new Promise(function (resolve, reject) { 
+  var basicOperation = true;
+
+  if (basicOperation) { 
+    resolve('play to win');
+  } else {
+    reject('crash and burn');
+  }
+});
+{% endhighlight %}
 
 If you enter `basicPromise` in the console you will see what a Promise object
 looks like and what value it has resolved to.
 
-```javascript basicPromise
+{% highlight javascript %}
+basicPromise
 
-// Promise {[[PromiseStatus]]: "resolved", [[PromiseValue]]: "play to win"} ```
+// Promise {[[PromiseStatus]]: "resolved", [[PromiseValue]]: "play to win"}
+{% endhighlight %}
 
 If you get an error stating that Promise is not defined your browser may not
 support Promises( currently no version of IE does). Consider updating your
@@ -211,9 +259,17 @@ resolved it's state to "resolved" or "rejected" it never changes status after
 that. If you want to invoke the same operation multiple times and use the
 Promise pattern then you can return a Promise from a function.
 
-```javascript function evenOdds() { return new Promise(function (resolve,
-reject) { if (Math.random() > 0.5) { resolve('beautiful'); } else {
-reject('horrific'); } }); } ```
+{% highlight javascript %}
+function evenOdds() { 
+  return new Promise(function (resolve, reject) { 
+    if (Math.random() > 0.5) { 
+      resolve('beautiful');
+    } else {
+      reject('horrific');
+    }
+  });
+}
+{% endhighlight %}
 
 If you enter `evenOdds();` multiple times in the console the `PromiseValue`will
 equal "resolve" or "reject" randomly. Now let's say we want to pass the
@@ -221,11 +277,17 @@ equal "resolve" or "reject" randomly. Now let's say we want to pass the
 provided with a `then` method that allows us to chain functions so that they
 perform sequentially and are able to pass values to subsquent functions.
 
-```javascript function get(value) { console.log('everything is ' + value); }
+{% highlight javascript %}
+function get(value) { 
+  console.log('everything is ' + value);
+}
 
-function throwOut(value) { console.log('so wrong ' + value); }
+function throwOut(value) { 
+  console.log('so wrong ' + value);
+}
 
-evenOdds().then(get, throwOut); ```
+evenOdds().then(get, throwOut);
+{% endhighlight %}
 
 Try entering `evenOdds().then(get, throwOut);` multiple times and you will
 observe the output message alternates between "so wrong horrific" and
@@ -236,7 +298,9 @@ does resolve, but at a later moment. If you wish to observe that it has
 "resolved" you will need to assign a variable to the expression and call that
 variable after the computation has occured.
 
-```javascript var resolution = evenOdds().then(get, throwOut); ```
+{% highlight javascript %}
+var resolution = evenOdds().then(get, throwOut);
+{% endhighlight %}
 
 According to the [Promises A+]() specification the `then` method receives two
 arguments that are ignored if they are not functions. The `then` method passes
@@ -253,11 +317,17 @@ What if you want to further extend the `then` chain and pass a value to another
 function? A simple way to do this is to add a return statement which shares a
 value down the chain.
 
-```javascript function fail(value) { return 'so ' + value; }
+{% highlight javascript %}
+function fail(value) { 
+  return 'so ' + value;
+}
 
-function give(val) { return 'so extremely ' + val; }
+function give(val) { 
+  return 'so extremely ' + val;
+}
 
-evenOdds().then(give, fail).then(get, throwOut); ```
+evenOdds().then(give, fail).then(get, throwOut);
+{% endhighlight %}
 
 You can enter the previous line repeatedly and the output will randomly be one
 of two messages.
@@ -275,17 +345,29 @@ the `fail` function.
 
 Notice how the Promise generator `gotcha` now takes an argument.
 
-```javascript function gotcha(value) { return new Promise(function (resolve,
-reject) { if (value.length > 0) { value = 'so extremely ' + value;
-resolve(value); } else { reject('sorry'); } }); }
+{% highlight javascript %}
+function gotcha(value) { 
+  return new Promise(function (resolve, reject) { 
+    if (value.length > 0) { 
+      value = 'so extremely ' + value;
 
-evenOdds().then(gotcha); ```
+      resolve(value);
+    } else {
+      reject('sorry');
+    }
+  });
+}
+
+evenOdds().then(gotcha);
+{% endhighlight %}
 
 The attempt here is to provide
 [modularity](http://en.wikipedia.org/wiki/Modular_programming) of `gotcha`. As a
 Promise `gotcha` can start a Promise chain because it is ***thenable***.
 
-```javascript gotcha('freaky').then(give); ```
+{% highlight javascript %}
+gotcha('freaky').then(give);
+{% endhighlight %}
 
 In the previous cases we have only provided one argument to `then`. This means
 that if `evenOdds()` resolves to "rejected" then `gotcha` is ignored. In this
@@ -332,23 +414,36 @@ that `getCurrentPosition` takes an optional second callback, `error`, which is
 triggered if `getCurrentPosition` can't get geolocation data for the device it
 is running on.
 
-```javascript navigator.geolocation.getCurrentPosition(success, error, options)
-```
+{% highlight javascript %}
+navigator.geolocation.getCurrentPosition(success, error, options)
+{% endhighlight %}
 
 So now let's implement a `finder` method and define a `success` and `error`
 function with some standard `options` for the output data.
 
-```javascript function success(position) { console.log('Your current position
-is;'); console.log(position.coords.latitude, position.coords.longitude); }
+{% highlight javascript %}
+function success(position) { 
+  console.log('Your current position is; ');
 
-function error() { alert('Sorry, no position available.'); }
+  console.log(position.coords.latitude, position.coords.longitude);
+}
 
-// These are some standard options, but they are not required.  var options = {
-enableHighAccuracy: true, maximumAge        : 30000, timeout           : 27000
+function error() { 
+  alert('Sorry, no position available.');
+}
+
+// These are some standard options, but they are not required.  
+var options = {
+  enableHighAccuracy: true,
+  maximumAge        : 30000,
+  timeout           : 27000
 };
 
-function finder() { navigator.geolocation.getCurrentPosition(success, error,
-options); } ```
+
+function finder() { 
+  navigator.geolocation.getCurrentPosition(success, error, options);
+}
+{% endhighlight %}
 
 If you enter `finder();` in your developer's console you will get an output of
 your current location assuming you are on a modern browser and have given it
@@ -365,15 +460,22 @@ First off we'll create a Promise constructor for the geolocation service. If you
 recall the function to acquire geolocation data takes a `success` and `error`
 callback.
 
-```javascript navigator.geolocation.getCurrentPosition(success, error, options)
-```
+{% highlight javascript %}
+navigator.geolocation.getCurrentPosition(success, error, options)
+{% endhighlight %}
 
 This makes it easy to pipe into a Promise as `success` and `error` correspond to
 `resolve` and `reject`. For the sake of simplicity we will ignore the `options`
 argument.
 
-```javascript function geoLocate() { return new Promise(function (resolve,
-reject) { navigator.geolocation.getCurrentPosition(resolve, reject); }); } ```
+{% highlight javascript %}
+function geoLocate() { 
+  return new Promise(function (resolve,
+        reject) { 
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+}
+{% endhighlight %}
 
 The way `getCurrentPosition` works is to pass a current Geoposition object to
 the success function if everything goes well and if not it will pass an error
@@ -382,26 +484,43 @@ message to the error function.
 To see this work we need to set a variable equal to `geoLocate()` that we can
 access after the Promise has resolved.
 
-```javascript var where = geoLocate(); ```
+{% highlight javascript %}
+var where = geoLocate();
+{% endhighlight %}
 
 If you wait a few moments and type `where` you will hopefully see that it has
 resolved to a Geoposition object. `geoLocate` is not so useful by itself so
 let's make a Promise generator that produces the latitude and longitude points
 from a Geoposition object.
 
-```javascript function getCoordinates(position) { return new Promise(function
-(resolve, reject) { if (position) { var coordinates = [position.coords.latitude,
-position.coords.longitude]; resolve(coordinates); } else { reject(position); }
-}); } ```
+{% highlight javascript %}
+function getCoordinates(position) { 
+  return new Promise(function (resolve, reject) { 
+    if (position) { 
+      var coordinates = [position.coords.latitude, position.coords.longitude];
+
+      resolve(coordinates);
+    } else {
+      reject(position);
+    }
+  });
+}
+{% endhighlight %}
 
 Now let's create a fresh logging function `grab` to display the result and for
 good measure we'll recycle `throwOut` so we have an error function to pass.
 
-```javascript function grab(val) { console.log(val); }
+{% highlight javascript %}
+function grab(val) { 
+  console.log(val);
+}
 
-function throwOut(value) { console.log('so wrong ' + value); }
+function throwOut(value) { 
+  console.log('so wrong ' + value);
+}
 
-geoLocate().then(getCoordinates).then(grab, throwOut); ```
+geoLocate().then(getCoordinates).then(grab, throwOut);
+{% endhighlight %}
 
 ##Reverse Geocoding
 
@@ -416,8 +535,10 @@ Javascript code for connection to the API. This is already included in the file
 'index.html' provided with the
 [code](https://github.com/Lyonsclay/Promises-Promises.git) for this tutorial.
 
-```html <script type="text/javascript"
-src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> ```
+{% highlight html %}
+<script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+{% endhighlight %}
 
 The Google Maps API performs many services which we are only using a small
 portion of. I say this because the code uses large messy objects, but it's still
@@ -427,32 +548,57 @@ Here is a simple function that takes an array containing latitude and longitude
 and retrieves the corresponding physical address which it then logs to the
 console.
 
-```javascript function reverseGeocode(points) { var geocoder = new
-google.maps.Geocoder(), coordinates = new google.maps.LatLng(points[0],
-points[1]), setting = { 'latLng': coordinates }; geocoder.geocode(setting,
-function (results, status) { if (status === 'OK') { var address =
-(results[0].formatted_address); console.log(address); } else { alert(status); }
-}); } ```
+{% highlight javascript %}
+function reverseGeocode(points) { 
+  var geocoder = new google.maps.Geocoder(),
+      coordinates = new google.maps.LatLng(points[0], points[1]),
+      setting = { 'latLng': coordinates };
+
+  geocoder.geocode(setting, function (results, status) { 
+    if (status === 'OK') { 
+      var address = (results[0].formatted_address);
+      console.log(address);
+    } else {
+      alert(status);
+    }
+  });
+}
+{% endhighlight %}
 
 For the sake of producing a physcial address we need not go any further.
 
-```javascript geoLocate().then(getCoordinates).then(reverseGeocode); ```
+{% highlight javascript %}
+geoLocate().then(getCoordinates).then(reverseGeocode);
+{% endhighlight %}
 
 But, for the sake of demonstration let's turn `reverseGeocode` into a Promise
 generator. To do this we will pass `results` to the `resolve` function and
 `status` to the `reject` function.
 
-```javascript function getAddress(points) { return new Promise(function
-(resolve, reject) { var geocoder = new google.maps.Geocoder(), coordinates = new
-google.maps.LatLng(points[0], points[1]), setting = { 'latLng': coordinates };
-geocoder.geocode(setting, function (results, status) { if (status === 'OK') {
-resolve(results[0].formatted_address); } else { reject(status); } }); }); } ```
+{% highlight javascript %}
+function getAddress(points) { 
+  return new Promise(function(resolve, reject) { 
+    var geocoder = new google.maps.Geocoder(),
+        coordinates = new google.maps.LatLng(points[0], points[1]),
+        setting = { 'latLng': coordinates };
+
+    geocoder.geocode(setting, function (results, status) { 
+      if (status === 'OK') {
+        resolve(results[0].formatted_address);
+      } else {
+        reject(status);
+      }
+    });
+  });
+}
+{% endhighlight %}
 
 Now we can partake in the fruit of our labor and find out where exactly in the
 physcial world we are.
 
-```javascript geoLocate().then(getCoordinates).then(getAddress).then(grab,
-throwOut); ```
+{% highlight javascript %}
+geoLocate().then(getCoordinates).then(getAddress).then(grab, throwOut);
+{% endhighlight %}
 
 If all worked out you will get something close to the current address you are
 occupying.
