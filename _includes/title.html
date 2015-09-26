@@ -1,7 +1,7 @@
 <svg class="site-title" width="100%" height="100%" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
   <defs>
     <filter id="glow" x="-5%" y="-5%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2 2" result="glow"/>
+      <feGaussianBlur stdDeviation="4 4" result="glow"/>
         <feMerge>
           <feMergeNode in="glow"/>
           <feMergeNode in="glow"/>
@@ -9,7 +9,7 @@
     </filter>
 
     <filter id="innerShadow" x="-0" y="-0" width="140%" height="140%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+    <feGaussianBlur in="SourceGraphic" stdDeviation="-2" result="blur"/>
       <feOffset in="blur" dx="2.5" dy="2.5"/>
     </filter>
 
@@ -20,22 +20,23 @@
 
   <g id="l&#xFEFF;yonsclay" style="letter-spacing: 3" text-anchor="middle">
     <a xlink:href="/">
-      <text x="50%" y="65" style="filter: url(#glow); fill: Silver; opacity: 0.5">
+      <text x="50%" y="65" style="filter: url(#glow); fill: LightCyan; opacity: 0.3">
         <tspan>l&#xFEFF;yonsclay.code( )</tspan>
       </text>
 
-      <text x="50%" y="65" style="fill: white; opacity: 0.2">
+      <text x="50%" y="65" style="fill: silver; opacity: 0.2">
         <tspan>l&#xFEFF;yonsclay.code( )</tspan>
       </text>
 
-      <text x="50%" y="65" style="filter: url(#innerShadow); fill: LightSlateGray; stroke: black; opacity: 0.5;">
+      <text x="50%" y="65" style="filter: url(#innerShadow); fill:
+     DarkSlateGray; stroke: white; stroke-width: 2px; opacity: 0.7;">
         <tspan>l&#xFEFF;yonsclay.code( )</tspan>
       </text>
     </a>
   </g>
 
   <g style="clip-path: url(#svgPath);">
-    <rect x="0" y="0" width="100%" height="100" style="fill: black; opacity: 0.4"/>
+    <rect x="0" y="0" width="100%" height="100" style="fill: url(#background); opacity: 1"/>
   </g>
 </svg>
 

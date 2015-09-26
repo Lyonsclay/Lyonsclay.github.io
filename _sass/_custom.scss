@@ -107,9 +107,17 @@ div.top-links {
   }
 }
 
+.body {
+  width: 100%;
+  z-index: 4;
+  background-image: linear-gradient(to bottom, gray 300px, white 40%);
+}
+
+body {
+  background-color: #E5E5E5;
+}
+
 a.post-link {
-  text-align: center;
-  color: inherit;
   font: 400 40px 'Noto Sans', helvetica;
 
   &:hover {
@@ -126,27 +134,39 @@ li span.most-meta {
   text-align: center;
 }
 
-h2 { 
-  color: DarkSlateGray;
-  opacity: 0.9;
-}
-
 pre#plain {
   text-align: left;
-  background-color: #fdfdfd;
+  background-color: inherit;
   margin-left: 100px;
   margin-right: 100px;
 }
 
+.hightlight {
+  background-color: white;
+}
+
+pre, code {
+  background-color: beige;
+}
+
 ul.post-list {
+  margin-top: 50px;
+  text-align: left;
   font: 15px 'Noto Sans', arial;
 
-  p {
+  li {
+    background-color: beige;
+    opacity: 0.5;
+    border-radius: 10px;
+    box-shadow: 1px 0px 8px 1px gray;
+    padding: 40px 40px 40px 70px;
+  }
+
+  * {
     color: DarkSlateGray;
   }
 }
 
 div.page-content {
   //background: rgba(0, 0, 0, 0.0);
-  background: CornSilk;
 }

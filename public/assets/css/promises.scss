@@ -24,10 +24,6 @@ div.top-links {
   }
 }
 
-
-.background-gradient {
-}
-
 div.top-links li .icon svg {
   path {
     fill: CornSilk;
@@ -47,6 +43,11 @@ div.top-links li .icon svg {
     fill: url(#background);
     opacity: 1.0;
     stroke-width: 0.5px;
+
+    @-moz-document url-prefix() {
+      fill: black;
+      opacity: 0.4;
+    }
   }
 }
 
@@ -55,6 +56,14 @@ div.left-links li .icon svg path {
   //stroke-width: 2px;
 }
 
+body {
+  background-color: ivory;
+}
+
+div.page-content {
+  background: linear-gradient(to bottom, 340px white);
+  opacity: 0.7;
+}
 
 pre#plain {
   background-color: #fdfdfd;
