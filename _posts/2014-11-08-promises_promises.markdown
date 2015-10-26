@@ -1,6 +1,7 @@
 ---
 layout: post
 custom_css: promises
+img: maximillian.jpg
 title: "Promises Promises"
 date: 2014-11-08 11:42:00
 categories: javascript promises async tutorial

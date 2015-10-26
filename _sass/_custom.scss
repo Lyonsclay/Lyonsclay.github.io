@@ -154,12 +154,32 @@ ul.post-list {
   text-align: left;
   font: 15px 'Noto Sans', arial;
 
+  .photo {
+    height: 250px;
+    overflow: hidden;
+  }
+
+  img {
+    margin-top: -170px;
+    width: 100%;
+  }
+
   li {
     background-color: beige;
-    opacity: 0.5;
+    opacity: 0.8;
     border-radius: 10px;
     box-shadow: 1px 0px 8px 1px gray;
-    padding: 40px 40px 40px 70px;
+    padding: 20px 20px 40px 20px;
+  }
+
+  h2 {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+
+  span {
+    margin-right: 30px;
+    float: right;
   }
 
   * {
@@ -169,4 +189,10 @@ ul.post-list {
 
 div.page-content {
   //background: rgba(0, 0, 0, 0.0);
+}
+
+.footer-col-3 {
+  p {
+    font: 20px 'Noto Sans', arial;
+  }
 }

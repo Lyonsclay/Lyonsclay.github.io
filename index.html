@@ -9,6 +9,10 @@ layout: default
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
+        <div class="photo">
+          <img src="public/assets/images/{{ post.img }}">
+        </div>
+
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           {{ post.excerpt }}
